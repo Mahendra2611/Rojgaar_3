@@ -16,7 +16,7 @@ export const postAdminJob = async(req,res)=>{
             })
         }
         const check = await AdminJob.findOne({name:name,location:location,role:role,mode:mode,jobType:jobType})
-       console.log(check)
+       //console.log(check)
         if(check){
             return res.status(400).json({
                 message:"job has already been created",
@@ -31,7 +31,7 @@ export const postAdminJob = async(req,res)=>{
             skills,
             link
         })
-       console.log(result)
+       //console.log(result)
         if(!result){
             return res.status(500).json({
                 message:"job can't be created",
@@ -54,7 +54,7 @@ export const updateAdminJob = async(req,res)=>{
     try {
         const {name,location,role,mode,jobType,skills,link} = req.body;
         const jobId = req.params.jobId
-        console.log(jobId)
+        //console.log(jobId)
         if(!name || !role ||!jobType || !link){
             return res.status(400).json({
                 message:"input fiels are not correct",
@@ -91,7 +91,7 @@ export const updateAdminJob = async(req,res)=>{
 
 }
 export const deleteAdminJob = async(req,res)=>{
-    console.log("called")
+    //console.log("called")
     try {
        
         const jobId = req.params.jobId
@@ -102,7 +102,7 @@ export const deleteAdminJob = async(req,res)=>{
             })
         }
         const check = await AdminJob.findById(jobId);
-       console.log(check)
+       //console.log(check)
         if(!check){
             return res.status(400).json({
                 message:"job doesn't exist",
@@ -111,7 +111,7 @@ export const deleteAdminJob = async(req,res)=>{
         }
         
         const result = await AdminJob.findByIdAndDelete(jobId)
-        console.log(result)
+        //console.log(result)
         if(!result){
             return res.status(500).json({
                 message:"job can't be deleted",

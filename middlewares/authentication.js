@@ -21,7 +21,7 @@ const authentication = (req,res,next)=>{
                     message:"JWT Token Verification failed"
                 })
             }
-            console.log(decoded);
+            //console.log(decoded);
             req.userId = decoded.user.userId;
             req.userRole = decoded.user.userRole
             
