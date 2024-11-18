@@ -8,8 +8,10 @@ import applicationRouter from "./routes/application.route.js"
 import cookieParser from "cookie-parser";
 import saveRouter from "./routes/saveLater.route.js"
 import adminJobRoute from "./routes/adminJob.route.js"
+import forgotPwd from "./routes/forgotPwd.route.js"
 import cors from "cors";
 // import { verificationEmail } from "./utils/verificationEmail.js";
+// origin: "https://rojgaar-mpv.onrender.com",
 dotenv.config()
 const corsOptions = {
     origin: "http://localhost:5173",
@@ -27,6 +29,7 @@ app.use("/job",jobRouter)
 app.use("/application",applicationRouter)
 app.use("/savelater",saveRouter)
 app.use("/adminJob",adminJobRoute)
+app.use("/forgotPwd",forgotPwd)
 // app.get("/email",verificationEmail)
 const PORT = process.env.PORT || 3000
 const server = app.listen(PORT,()=>{
