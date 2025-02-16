@@ -15,7 +15,7 @@ import mongoose from "mongoose";
 // origin: "http://localhost:5173",
 dotenv.config()
 const corsOptions = {
-  origin: "https://rojgaar-mpv.vercel.app/",
+  origin: "https://rojgaar-mpv.vercel.app",
     methods: ["POST", "GET","DELETE","PUT"],
     credentials: true
   };
