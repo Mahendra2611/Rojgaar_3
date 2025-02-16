@@ -14,7 +14,7 @@ import mongoose from "mongoose";
 // origin: "http://localhost:5173",
 dotenv.config()
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://rojgaar-mpv.onrender.com",
     methods: ["POST", "GET","DELETE","PUT"],
     credentials: true
   };
