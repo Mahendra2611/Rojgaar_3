@@ -11,10 +11,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 // import { verificationEmail } from "./utils/verificationEmail.js";
 // origin: "https://rojgaar-mpv.onrender.com",
+//https://rojgaar-mpv.vercel.app/
 // origin: "http://localhost:5173",
 dotenv.config()
 const corsOptions = {
-  origin: "https://rojgaar-mpv.onrender.com",
+  origin: "https://rojgaar-mpv.vercel.app/",
     methods: ["POST", "GET","DELETE","PUT"],
     credentials: true
   };
