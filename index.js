@@ -2,9 +2,7 @@ import express from "express";
 //import connectDB from "./utils/connectDB.js";
 import dotenv from "dotenv"
 import userRoute from "./routes/user.route.js"
-import jobRouter from "./routes/job.route.js"
-import companyRoute from "./routes/company.route.js"
-import applicationRouter from "./routes/application.route.js"
+
 import cookieParser from "cookie-parser";
 import saveRouter from "./routes/saveLater.route.js"
 import adminJobRoute from "./routes/adminJob.route.js"
@@ -26,9 +24,7 @@ app.use(cors(corsOptions))
 app.use(express.json({ limit: '10mb' }));
 
 app.use("/user",userRoute)
-app.use("/company",companyRoute)
-app.use("/job",jobRouter)
-app.use("/application",applicationRouter)
+
 app.use("/savelater",saveRouter)
 app.use("/adminJob",adminJobRoute)
 app.use("/forgotPwd",forgotPwd)

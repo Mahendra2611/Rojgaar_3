@@ -3,13 +3,7 @@ import { AdminJob } from "../models/adminJob.model.js"
 export const postAdminJob = async(req,res)=>{
     try {
         const {name,location,role,mode,jobType,skills,link} = req.body;
-        console.log(name)
-        console.log(role)
-        console.log(jobType)
-        console.log(link)
-        console.log(location)
-        console.log(mode)
-        console.log(skills)
+       
         if(!name || !role ||!jobType || !link){
             return res.status(400).json({
                 message:"input fiels are not correct",
