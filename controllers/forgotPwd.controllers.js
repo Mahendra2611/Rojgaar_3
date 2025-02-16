@@ -44,14 +44,14 @@ try {
         })
     }
     //console.log(result)
-    console.log("send otp called")
+    //console.log("send otp called")
   const {success,otp} =  await sendOTP(email);
-  console.log("after otp called")
- console.log(success)
- console.log(otp)
+ // console.log("after otp called")
+ //console.log(success)
+ //console.log(otp)
   if(success){
   const isCreated =  await OTP.create({otp:otp,userId:result._id})
-  console.log(isCreated)
+  //console.log(isCreated)
    if(!isCreated){
     return res.json({
         message:"OTP could not been sent, Try again !!!",
@@ -79,7 +79,7 @@ try {
   }
    
 } catch (error) {
-    console.log(error)
+    //console.log(error)
     return res.status(500).json({
         message:"server error occured",
         success:false,
@@ -87,13 +87,13 @@ try {
 }
 }
 const sendOTP = async(email)=>{
-    console.log("generate otp")
+    //console.log("generate otp")
 const otp = generateOtp();
 try {
-    console.log("transporter")
-    console.log(process.env.EMAIL_USER)
-    console.log(process.env.EMAIL_PASSWORD )
-    console.log(email)
+   // console.log("transporter")
+    //console.log(process.env.EMAIL_USER)
+    //console.log(process.env.EMAIL_PASSWORD )
+    //console.log(email)
     const transporter =  nodemailer.createTransport({
         service: 'gmail', 
         auth: {
@@ -101,17 +101,17 @@ try {
           pass: process.env.EMAIL_PASSWORD  
         }
       });
-      console.log("mail options")
+     
       const mailOptions = {
         from:process.env.EMAIL_USER,
         to: `${email}`,
         subject: 'Your OTP Code',
         text: `Your OTP code is ${otp}. It is valid for 15 minutes.`
       };
-      console.log("after mail options")
+     
       const result = await transporter.sendMail(mailOptions);
-      console.log(result)
-      console.log(`OTP sent to ${email}: ${otp}`);
+    //   console.log(result)
+    //   console.log(`OTP sent to ${email}: ${otp}`);
       return {
         success:true,
         otp:otp,
